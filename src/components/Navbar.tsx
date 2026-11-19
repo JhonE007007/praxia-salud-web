@@ -7,9 +7,9 @@ import { waLink } from "@/data/site";
 const links = [
   { href: "#inicio", label: "Inicio" },
   { href: "#nosotros", label: "Nosotros" },
-  { href: "#simulacion", label: "Simulación" },
   { href: "#cursos", label: "Cursos" },
-  { href: "#aliados", label: "Aliados" },
+  { href: "#ecosistema", label: "Ecosistema" },
+  { href: "#membresia", label: "Membresía" },
   { href: "#contacto", label: "Contacto" },
 ];
 

@@ -97,22 +97,128 @@ export const areas = [
   { icono: "vr", titulo: "Realidad virtual", texto: "Procedimientos paso a paso en experiencias inmersivas." },
 ] as const;
 
-export const nosotros = {
-  titulo: "Años de experiencia,",
-  destacado: "hoy Praxia Salud",
-  texto:
-    "Nacemos de una trayectoria en salud, docencia, gestión de laboratorios, formación de profesionales y simulación médica, con un propósito: formar profesionales de la salud más preparados, competentes, humanos y seguros de sus conocimientos y habilidades.",
-  pasos: [
-    { titulo: "Aprende la teoría", texto: "Clases virtuales o presenciales con especialistas" },
-    { titulo: "Practica en simulación", texto: "Escenarios reales, sin riesgo para el paciente" },
-    { titulo: "Certifícate", texto: "Valida tus competencias profesionales" },
-  ],
-};
-
 export const galeria = [
   { src: "/img/v34.jpg", titulo: "Trabajo en equipo" },
   { src: "/img/v7.jpg", titulo: "Quirófano" },
   { src: "/img/v10.jpg", titulo: "Vía aérea" },
   { src: "/img/v28.jpg", titulo: "Emergencias" },
   { src: "/img/v4.jpg", titulo: "Certificación" },
+];
+
+/* ─────────────────────────────────────────────────────────────
+ *  ECOSISTEMA PRAXIA · fuente: Brochure de Servicios Praxia 2026
+ * ───────────────────────────────────────────────────────────── */
+
+export const identidad = {
+  titular: "Transformamos personas en profesionales de la salud",
+  destacado: "extraordinarios",
+  noSomos: ["No somos un centro de simulación", "No somos una empresa de cursos"],
+  somos: "Somos un ecosistema de formación, entrenamiento y desarrollo profesional en salud",
+  mision:
+    "Transformar la educación continua mediante metodologías inmersivas de alta fidelidad, promoviendo la seguridad del paciente y la excelencia operativa.",
+  vision:
+    "Ser el centro referente regional en simulación multidisciplinaria, certificación técnica y mantenimiento biomédico de vanguardia.",
+};
+
+export type Unidad = {
+  id: string;
+  nombre: string; // se muestra como "PRAXIA {nombre}"
+  icono: "academy" | "sim" | "discovery" | "family" | "skills" | "biomed" | "consulting" | "cert";
+  titulo: string;
+  destacado: string;
+  lema?: string;
+  para: string; // a quién va dirigido (texto corto para la pestaña)
+  imagen: string;
+  servicios: string[];
+};
+
+export const unidades: Unidad[] = [
+  {
+    id: "academy", nombre: "Academy", icono: "academy",
+    titulo: "Formamos hoy a los profesionales", destacado: "que transformarán la salud",
+    para: "Educación continua",
+    imagen: "/img/eco/academy.jpg",
+    servicios: [
+      "Soporte Vital", "Ultrasonido", "Emergencias", "Laboratorio Clínico", "Biología Molecular",
+      "Investigación", "Docencia", "Simulación", "Inteligencia Artificial", "Gestión Hospitalaria",
+      "Seguridad del Paciente", "Calidad", "Normativas", "Salud Pública", "Cursos Internacionales",
+      "Diplomados", "Bootcamps", "Microcredenciales",
+    ],
+  },
+  {
+    id: "sim", nombre: "Sim", icono: "sim",
+    titulo: "Formación que", destacado: "salva vidas",
+    para: "Simulación clínica",
+    imagen: "/img/eco/sim.jpg",
+    servicios: [
+      "Curso de instructores", "Curso de técnicos", "Pacientes estandarizados", "Diseño de escenarios",
+      "Debriefing", "Diseño de centros", "Consultoría", "Entrenamiento institucional",
+    ],
+  },
+  {
+    id: "skills-lab", nombre: "Skills Lab", icono: "skills",
+    titulo: "Domina cada", destacado: "procedimiento", lema: "Entrenamiento continuo",
+    para: "Procedimientos",
+    imagen: "/img/eco/skills-lab.jpg",
+    servicios: ["Venopunción", "Intubación", "Ultrasonido", "Parto", "Canalización", "Laparoscopia", "Catéteres", "ECG", "Reanimación"],
+  },
+  {
+    id: "cert", nombre: "Cert", icono: "cert",
+    titulo: "Certificaciones", destacado: "que impulsan tu carrera", lema: "Prepárate. Certifícate. Destaca.",
+    para: "Certificaciones",
+    imagen: "/img/eco/cert.jpg",
+    servicios: [
+      "Certificaciones nacionales e internacionales", "Cursos oficiales", "Recertificaciones",
+      "Preparación para exámenes", "Convenios internacionales",
+    ],
+  },
+  {
+    id: "discovery", nombre: "Discovery", icono: "discovery",
+    titulo: "Estudiantes que se convierten en", destacado: "profesionales de la salud por un día",
+    para: "Colegios y estudiantes",
+    imagen: "/img/eco/discovery.jpg",
+    servicios: [
+      "Médico por un día", "Enfermero por un día", "Odontólogo por un día", "Biotecnólogo por un día",
+      "Laboratorista por un día", "Paramédico por un día", "Obstetra por un día", "Psicólogo por un día",
+      "Terapista físico por un día",
+    ],
+  },
+  {
+    id: "family", nombre: "Family", icono: "family",
+    titulo: "Seguridad", destacado: "para todos", lema: "Cuida. Actúa. Protege.",
+    para: "Familias y empresas",
+    imagen: "/img/eco/family.jpg",
+    servicios: [
+      "Primeros auxilios para padres", "RCP para familias", "Atragantamiento en bebés", "Cuidado del adulto mayor",
+      "Prevención de accidentes", "Uso del DEA", "Primeros auxilios escolares", "Primeros auxilios empresariales",
+      "Manejo de quemaduras", "Manejo de intoxicaciones", "Salud mental básica",
+    ],
+  },
+  {
+    id: "biomed", nombre: "Biomed", icono: "biomed",
+    titulo: "Gestión inteligente", destacado: "de tecnología médica", lema: "Más precisión, más confianza",
+    para: "Equipos biomédicos",
+    imagen: "/img/eco/biomed.jpg",
+    servicios: [
+      "Mantenimiento preventivo", "Mantenimiento correctivo", "Calibración", "Instalación", "Inventarios",
+      "Gestión tecnológica", "Asesoría para compra de equipos", "Montaje de laboratorios", "Capacitación técnica",
+    ],
+  },
+  {
+    id: "consulting", nombre: "Consulting", icono: "consulting",
+    titulo: "Impulsamos la", destacado: "excelencia", lema: "Creamos soluciones sostenibles",
+    para: "Instituciones",
+    imagen: "/img/eco/consulting.jpg",
+    servicios: [
+      "Universidades", "Hospitales", "Ministerios", "Centros de simulación", "Diseño curricular",
+      "Acreditaciones", "Centros de entrenamiento", "Creación de laboratorios", "Educación continua",
+    ],
+  },
+];
+
+/** Planes de membresía. Agrega precio y beneficios cuando Praxia los confirme. */
+export const membresias: { plan: string; precio?: string; beneficios?: string[] }[] = [
+  { plan: "Mensual" },
+  { plan: "Trimestral" },
+  { plan: "Anual" },
 ];

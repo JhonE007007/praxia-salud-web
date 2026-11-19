@@ -10,7 +10,10 @@ Todo el contenido editable está en **`src/data/site.ts`**:
 
 - **Cursos** (`cursos`): el primer curso con `activo: true` es el banner principal. Agrega cursos a la lista para que aparezcan en el carrusel y en la sección "Próximos cursos". Pon `activo: false` cuando un curso termine.
 - **Contacto** (`contacto`): WhatsApp, correo, dirección, enlace de Google Maps, horario y redes sociales (las redes vacías no se muestran).
-- **Textos** de áreas de simulación, nosotros y galería.
+- **Ecosistema** (`unidades`): las 8 unidades de negocio (Academy, Sim, Skills Lab, Cert, Discovery, Family, Biomed, Consulting) con sus servicios, tomadas del Brochure de Servicios 2026.
+- **Identidad** (`identidad`): titular, misión y visión.
+- **Membresía** (`membresias`): planes mensual, trimestral y anual; agrega `precio` y `beneficios` cuando estén definidos.
+- **Textos** de áreas de simulación y galería.
 
 Imágenes y video en `public/img` y `public/video`.
 

@@ -2,7 +2,7 @@ import { asset } from "@/lib";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Calendar, CircleCheck, Clock, Mail, MapPin, Monitor, Pause, Play, Users, Volume2, VolumeX } from "lucide-react";
 import { Icon, WhatsApp, Instagram, Facebook, TikTok, LinkedIn } from "./Icons";
-import { areas, contacto, cursos, galeria, nosotros, waLink } from "@/data/site";
+import { areas, contacto, cursos, galeria, waLink } from "@/data/site";
 
 /* ── Reveal on scroll ───────────────────────── */
 export function useReveal() {
@@ -127,46 +127,6 @@ function Tag({ icon, children }: { icon: React.ReactNode; children: React.ReactN
   );
 }
 
-/* ── Nosotros ───────────────────────────────── */
-export function Nosotros() {
-  return (
-    <section id="nosotros" className="relative overflow-hidden py-[70px] md:py-[120px]">
-      <div className="blob right-[-100px] top-20 h-[480px] w-[480px] bg-brand-sky opacity-40" />
-      <div className="relative mx-auto grid max-w-site items-center gap-10 px-5 md:px-10 lg:grid-cols-2 lg:gap-[70px]">
-        <div className="reveal relative h-[380px] md:h-[600px]">
-          <img src={asset("/img/v34.jpg")} alt="Equipo de salud en simulación" className="absolute left-0 top-0 h-[72%] w-[72%] rounded-[30px] object-cover object-[50%_35%] shadow-[0_30px_60px_rgba(11,42,85,.25)]" />
-          <img src={asset("/img/v7.jpg")} alt="Simulación en quirófano" className="absolute bottom-0 right-0 h-[56%] w-[56%] rounded-[30px] border-8 border-white object-cover shadow-[0_30px_60px_rgba(11,42,85,.25)]" />
-          <div className="glass glass-light absolute bottom-6 left-4 flex max-w-[280px] items-center gap-3.5 rounded-3xl p-4 md:bottom-8 md:left-6">
-            <div className="icon-chip-light h-12 w-12 rounded-2xl"><Users size={24} strokeWidth={1.6} /></div>
-            <div>
-              <b className="block text-[15px]">Grupos reducidos</b>
-              <small className="text-[13px] text-muted">Práctica supervisada por especialistas</small>
-            </div>
-          </div>
-        </div>
-        <div className="reveal">
-          <div className="kicker">Quiénes somos</div>
-          <h2 className="h2">{nosotros.titulo} <span className="text-brand">{nosotros.destacado}</span></h2>
-          <p className="lead">{nosotros.texto}</p>
-          <div className="mt-8 flex flex-col gap-3.5">
-            {nosotros.pasos.map((p, k) => (
-              <div key={p.titulo} className="glass glass-light flex items-center gap-4 rounded-[22px] px-5 py-4">
-                <div className="grid h-[46px] w-[46px] shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-[#2bb6ff] to-navy font-extrabold text-white">
-                  0{k + 1}
-                </div>
-                <div>
-                  <b className="block text-[17px]">{p.titulo}</b>
-                  <small className="text-sm text-muted">{p.texto}</small>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ── Video + galería ────────────────────────── */
 export function Video() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -260,7 +220,7 @@ export function Contacto() {
             <div className="kicker !text-brand-sky">Capacita a tu equipo</div>
             <h2 className="h2">Vive la experiencia <span className="text-brand">Praxia</span></h2>
             <p className="text-base leading-relaxed text-white/80 md:text-lg">
-              Cursos abiertos, programas a medida para hospitales y clínicas, y convenios con universidades.
+              Cursos abiertos, entrenamiento institucional, certificaciones, consultoría y gestión de tecnología médica para hospitales, universidades y empresas.
             </p>
             <a href={waLink("Hola Praxia Salud, quiero información sobre capacitaciones.")} target="_blank" rel="noopener" className="btn btn-primary mt-8">
               <WhatsApp /> Escríbenos por WhatsApp
