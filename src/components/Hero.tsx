@@ -1,3 +1,4 @@
+import { asset } from "@/lib";
 import { useCallback, useEffect, useState } from "react";
 import { ArrowRight, Calendar, ChevronLeft, ChevronRight, Monitor, Play, Users } from "lucide-react";
 import { WhatsApp, Icon } from "./Icons";
@@ -32,7 +33,7 @@ export default function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <img src={bg} alt="" className="absolute inset-0 h-full w-full object-cover object-[60%_35%]" />
+      <img src={asset(bg)} alt="" className="absolute inset-0 h-full w-full object-cover object-[60%_35%]" />
       <div
         className="absolute inset-0"
         style={{
@@ -131,7 +132,7 @@ function SlideCurso({ c }: { c: Curso }) {
       </div>
 
       <div className="glass relative h-[300px] w-full shrink-0 rounded-[28px] p-2 md:h-[460px] md:rounded-[36px] md:p-3 lg:h-[560px] lg:w-[470px]">
-        <img src={c.imagen} alt={`Curso ${c.nombre}`} className="h-full w-full rounded-[22px] object-cover md:rounded-[26px]" />
+        <img src={asset(c.imagen)} alt={`Curso ${c.nombre}`} className="h-full w-full rounded-[22px] object-cover md:rounded-[26px]" />
         <div className="glass absolute left-5 top-5 rounded-3xl px-4 py-3 text-center leading-none md:left-8 md:top-8 md:px-5 md:py-4">
           <small className="block text-[11px] font-bold tracking-[0.22em] text-brand-sky">INICIA</small>
           <b className="mb-0.5 mt-1.5 block text-[40px] font-extrabold md:text-[54px]">{c.dia}</b>

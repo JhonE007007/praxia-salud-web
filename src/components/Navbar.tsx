@@ -1,3 +1,4 @@
+import { asset } from "@/lib";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { WhatsApp } from "./Icons";
@@ -33,7 +34,7 @@ export default function Navbar() {
           aria-label="Principal"
         >
           <a href="#inicio" aria-label="Praxia Salud, inicio">
-            <img src="/img/logo_white.png" alt="Praxia · Del conocimiento a la práctica" className="h-8 md:h-10" />
+            <img src={asset("/img/logo_white.png")} alt="Praxia · Del conocimiento a la práctica" className="h-8 md:h-10" />
           </a>
 
           <ul className="hidden items-center gap-8 text-[15px] font-semibold text-white lg:flex">

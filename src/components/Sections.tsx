@@ -1,3 +1,4 @@
+import { asset } from "@/lib";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Calendar, CircleCheck, Clock, Mail, MapPin, Monitor, Pause, Play, Users, Volume2, VolumeX } from "lucide-react";
 import { Icon, WhatsApp, Instagram, Facebook, TikTok, LinkedIn } from "./Icons";
@@ -67,7 +68,7 @@ export function Cursos() {
           {activos.map((c) => (
             <article key={c.id} className="reveal glass grid overflow-hidden rounded-[28px] md:rounded-[36px] lg:grid-cols-[1.05fr_1fr]">
               <div className="relative min-h-[260px] lg:min-h-[540px]">
-                <img src={c.imagen} alt={`Curso ${c.nombre}`} className="absolute inset-0 h-full w-full object-cover" />
+                <img src={asset(c.imagen)} alt={`Curso ${c.nombre}`} className="absolute inset-0 h-full w-full object-cover" />
                 <div className="glass absolute left-4 top-4 rounded-3xl px-4 py-3 text-center leading-none md:left-7 md:top-7 md:px-5 md:py-4">
                   <small className="block text-[11px] font-bold tracking-[0.22em] text-brand-sky">INICIA</small>
                   <b className="mb-0.5 mt-1.5 block text-[40px] font-extrabold md:text-[54px]">{c.dia}</b>
@@ -133,8 +134,8 @@ export function Nosotros() {
       <div className="blob right-[-100px] top-20 h-[480px] w-[480px] bg-brand-sky opacity-40" />
       <div className="relative mx-auto grid max-w-site items-center gap-10 px-5 md:px-10 lg:grid-cols-2 lg:gap-[70px]">
         <div className="reveal relative h-[380px] md:h-[600px]">
-          <img src="/img/v34.jpg" alt="Equipo de salud en simulación" className="absolute left-0 top-0 h-[72%] w-[72%] rounded-[30px] object-cover object-[50%_35%] shadow-[0_30px_60px_rgba(11,42,85,.25)]" />
-          <img src="/img/v7.jpg" alt="Simulación en quirófano" className="absolute bottom-0 right-0 h-[56%] w-[56%] rounded-[30px] border-8 border-white object-cover shadow-[0_30px_60px_rgba(11,42,85,.25)]" />
+          <img src={asset("/img/v34.jpg")} alt="Equipo de salud en simulación" className="absolute left-0 top-0 h-[72%] w-[72%] rounded-[30px] object-cover object-[50%_35%] shadow-[0_30px_60px_rgba(11,42,85,.25)]" />
+          <img src={asset("/img/v7.jpg")} alt="Simulación en quirófano" className="absolute bottom-0 right-0 h-[56%] w-[56%] rounded-[30px] border-8 border-white object-cover shadow-[0_30px_60px_rgba(11,42,85,.25)]" />
           <div className="glass glass-light absolute bottom-6 left-4 flex max-w-[280px] items-center gap-3.5 rounded-3xl p-4 md:bottom-8 md:left-6">
             <div className="icon-chip-light h-12 w-12 rounded-2xl"><Users size={24} strokeWidth={1.6} /></div>
             <div>
@@ -190,8 +191,8 @@ export function Video() {
           <div className="glass relative mx-auto aspect-[9/16] w-full max-w-[380px] rounded-[32px] p-2.5">
             <video
               ref={ref}
-              src="/video/praxia.mp4"
-              poster="/img/poster.jpg"
+              src={asset("/video/praxia.mp4")}
+              poster={asset("/img/poster.jpg")}
               muted={muted}
               loop
               playsInline
@@ -211,7 +212,7 @@ export function Video() {
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             {galeria.map((g, k) => (
               <figure key={g.src} className={`group relative overflow-hidden rounded-[22px] ${k === 0 ? "col-span-2 aspect-[16/8]" : "aspect-[4/3]"}`}>
-                <img src={g.src} alt={g.titulo} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                <img src={asset(g.src)} alt={g.titulo} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                 <figcaption className="glass absolute bottom-3 left-3 rounded-xl px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide">{g.titulo}</figcaption>
               </figure>
             ))}
@@ -231,7 +232,7 @@ export function Aliados() {
         <h2 className="h2 !text-[28px] md:!text-[40px]">Instituciones y aliados</h2>
         <div className="-mx-5 mt-8 overflow-x-auto px-5 md:mx-0 md:overflow-visible md:px-0">
         <img
-          src="/img/aliados_wide.jpg"
+          src={asset("/img/aliados_wide.jpg")}
           alt="FLASIC, SANESPI, Society of Critical Care Medicine, ARMTY, MSP, Universidad Central del Ecuador, IESS, UDLA, Ministerio del Trabajo, PUCE, Clínicas Atlas"
           className="mx-auto w-[760px] max-w-none opacity-70 mix-blend-multiply grayscale transition hover:opacity-100 hover:grayscale-0 md:w-full md:max-w-[1100px]"
         />
@@ -251,7 +252,7 @@ export function Contacto() {
   ];
   return (
     <section id="contacto" className="relative overflow-hidden bg-navy-deep py-[70px] text-white md:py-[110px]">
-      <img src="/img/v28.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+      <img src={asset("/img/v28.jpg")} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
       <div className="blob left-[30%] top-[-120px] h-[520px] w-[520px] bg-brand opacity-35" />
       <div className="relative mx-auto max-w-site px-5 md:px-10">
         <div className="reveal glass grid items-center gap-10 rounded-[28px] p-6 md:rounded-[40px] md:p-16 lg:grid-cols-[1.3fr_1fr]">
@@ -300,7 +301,7 @@ export function Footer() {
   return (
     <footer className="bg-navy-night py-10 text-sm text-white/60">
       <div className="mx-auto flex max-w-site flex-col items-center justify-between gap-5 px-5 md:flex-row md:px-10">
-        <img src="/img/logo_white.png" alt="Praxia" className="h-9 opacity-90" />
+        <img src={asset("/img/logo_white.png")} alt="Praxia" className="h-9 opacity-90" />
         {redes.length > 0 && (
           <div className="flex gap-2">
             {redes.map((r) => (
